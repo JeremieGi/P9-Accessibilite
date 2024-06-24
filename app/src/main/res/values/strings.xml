@@ -7,6 +7,7 @@
     <string name="impossible_d_avoir_une_quantit_n_gative">Impossible d\'avoir une quantité négative</string>
     <string name="cas_2">Cas 2 :</string>
     <string name="cd_ajouter_aux_favoris">Ajouter aux favoris</string>
+    <string name="cd_retirer_des_favoris">Retirer des favoris</string>
     <string name="ajouter">Ajouter</string>
     <string name="demo_cookie_text">Cookies au chocolat</string>
     <string name="recette_ajout_au_panier">Recette ajoutée au panier</string>
@@ -17,5 +18,6 @@
     <string name="ajouter_un_article_du_panier">Ajouter un article du panier</string>
     <string name="enlever_un_article_du_panier">Enlever un article du panier</string>
     <string name="quantit_actuelle">Quantité actuelle : %1$s</string>
+    <string name="clic_recette">Recette cliquée</string>
 
 </resources>
