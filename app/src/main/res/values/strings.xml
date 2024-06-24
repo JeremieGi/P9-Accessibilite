@@ -14,5 +14,8 @@
     <string name="pseudo">Pseudonyme :</string>
     <string name="validate">Valider</string>
     <string name="demo_product_name">Nom du produit</string>
+    <string name="ajouter_un_article_du_panier">Ajouter un article du panier</string>
+    <string name="enlever_un_article_du_panier">Enlever un article du panier</string>
+    <string name="quantit_actuelle">Quantité actuelle : %1$s</string>
 
 </resources>

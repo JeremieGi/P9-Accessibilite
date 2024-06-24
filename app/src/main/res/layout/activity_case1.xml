@@ -7,6 +7,13 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
+    <!--
+        - Point 1 - Content description pour les boutons
+        - Point 2 - Police de caractère en sp
+        - Agrandissement zone de clic
+        - Point 3 - Amélioration contraste des boutons
+    -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,35 +29,40 @@
         android:background="@color/beige"
         android:minHeight="90dp"
         android:padding="4dp">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/demo_product_name"
-            android:textSize="60px"
-            android:layout_weight="1"/>
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/removeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_remove"
-            />
+            android:contentDescription="@string/enlever_un_article_du_panier"
+            android:backgroundTint="@color/gray400"/>
 
         <TextView
             android:id="@+id/quantityText"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="0"
-            android:textSize="60px"
-            android:layout_margin="20dp"
-            android:textColor="@color/gray400"/>
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
 
         <ImageButton
             android:id="@+id/addButton"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_add"
+            android:contentDescription="@string/ajouter_un_article_du_panier"
+            android:backgroundTint="@color/gray400"
             />
 
 
