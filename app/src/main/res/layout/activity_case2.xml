@@ -26,12 +26,12 @@
             android:layout_height="match_parent">
 
             <!-- importantForAccessibility="no" car le libellé est parlant -->
-            <!-- 1- productImage <ImageView>: Insufficient image color contrast ratio => Il faudrait mettre une autre image avec plus de contraste -->
+            <!-- 1- nouvelle image de cookie avec contraste -->
             <ImageView
                 android:id="@+id/productImage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/cookie_amirali_mirhashemian_unsplash"
+                android:src="@drawable/cookie"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

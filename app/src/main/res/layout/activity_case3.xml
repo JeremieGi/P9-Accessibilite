@@ -16,26 +16,52 @@
 
 
     <TextView
+        android:id="@+id/labelPseudo"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pseudo"
+        android:labelFor="@+id/pseudoEdit"
         style="@style/TextAppearance.MaterialComponents.Body1"
-
+        android:focusable="false"
         />
+
+    <!--
+    1. Il manque la propriété labelFor
+
+    2. La hauteur du champ de saisie est insuffisante (inférieure à 48 dp).
+
+    3 . Renseigner la propriété autofillHints-->
+
 
     <EditText
         android:id="@+id/pseudoEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:inputType="text"
+        android:autofillHints="name"
         />
+
 
     <Button
         android:id="@+id/validateButton"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/validate"
+        />
+
+
+    <TextView
+        android:id="@+id/labelExplication"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explicationErreur"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:focusable="false"
         />
 
 </LinearLayout>

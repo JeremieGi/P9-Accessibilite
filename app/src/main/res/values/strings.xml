@@ -19,5 +19,7 @@
     <string name="enlever_un_article_du_panier">Enlever un article du panier</string>
     <string name="quantit_actuelle">Quantité actuelle : %1$s</string>
     <string name="clic_recette">Recette cliquée</string>
+    <string name="explicationErreur">Le pseudo doit faire au moins 3 caractères</string>
+    <string name="pseudo_correct">Pseudo correct</string>
 
 </resources>
