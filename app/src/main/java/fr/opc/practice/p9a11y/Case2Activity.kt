@@ -42,6 +42,7 @@ class Case2Activity : AppCompatActivity() {
          * Nous pouvons optimiser la navigation grâce aux Accessibility Actions,
          * et faire que la carte soit parcourable en un seul geste.
          *
+         * https://developer.android.com/reference/androidx/core/view/accessibility/AccessibilityNodeInfoCompat
          */
 
 /*
@@ -53,7 +54,7 @@ class Case2Activity : AppCompatActivity() {
             true // Retourne true pour indiquer que l'action a été gérée avec succès
         }
 */
- /*
+
         // Définir un AccessibilityDelegateCompat personnalisé pour votre vue
         ViewCompat.setAccessibilityDelegate(binding.recipeCard, object : AccessibilityDelegateCompat() {
 
@@ -61,38 +62,40 @@ class Case2Activity : AppCompatActivity() {
 
                 super.onInitializeAccessibilityNodeInfo(host, info)
 
-                // Ajouter une action d'accessibilité personnalisée
+                // Fonctionne
                 val customAction = AccessibilityNodeInfoCompat.AccessibilityActionCompat(
-                    // TalkBack dis "Appuer 2 fois pour ..."
-                    AccessibilityNodeInfoCompat.ACTION_CLICK, "Action personnalisée"
+                    // TalkBack dis "Appuyer 2 fois pour ..."
+                    AccessibilityNodeInfoCompat.ACTION_CLICK, "Action personnalisée par Jérémie"
                 )
                 info.addAction(customAction)
 
-                val customAction2 = AccessibilityNodeInfoCompat.AccessibilityActionCompat(
-                    // TalkBack dis "Appuer 2 fois pour ..."
-                    AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS, "Action personnalisée"
-                )
-                info.addAction(customAction2)
-
-                // Ajouter une action d'accessibilité personnalisée pour ignorer les éléments internes du CardView
-                val ignoreAction = AccessibilityNodeInfoCompat.AccessibilityActionCompat(
-                    AccessibilityNodeInfoCompat.ACTION_CLEAR_SELECTION, "Ignorer les éléments internes du CardView"
-                )
-                info.addAction(ignoreAction)
-
             }
-   */
 
-/*
-            override fun performAccessibilityAction(host: View, action: Int, args: Bundle?): Boolean {
-                if (action == R.id.custom_action_ignore_cardview) {
-                    // Gérer l'action pour ignorer les éléments internes du CardView
-                    return true // Retourner true pour indiquer que l'action a été gérée
+
+            // Ecoute les actions qui ont lieu sur le cardView
+            override fun performAccessibilityAction(cardView : View, action: Int, args: Bundle?): Boolean {
+
+                when (action){
+                    AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS -> {
+                        cardView.requestFocus()
+                        Log.d("performAccessibilityAction","ACTION_ACCESSIBILITY_FOCUS")
+                        //return true
+                    }
+
+                    AccessibilityNodeInfoCompat.ACTION_CLICK -> {
+                        Log.d("performAccessibilityAction","ACTION_CLICK")
+                    }
+
+                    else -> {
+                        Log.d("performAccessibilityAction else ","$action")
+                    }
+
                 }
-                return super.performAccessibilityAction(host, action, args)
+
+                return super.performAccessibilityAction(cardView, action, args)
             }
 
-        })*/
+        })
 
     }
 
