@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="4dp"
             android:layout_width="match_parent"
@@ -36,7 +37,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:scaleType="centerCrop"
-                android:importantForAccessibility="no" />
+                android:importantForAccessibility="no"
+                />
 
             <ImageButton
                 android:id="@+id/favouriteButton"
@@ -60,7 +62,8 @@
                 android:text="@string/demo_cookie_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/productImage" />
+                app:layout_constraintTop_toBottomOf="@id/productImage"
+                />
 
                 <Button
                     android:id="@+id/addRecipeToBasket"

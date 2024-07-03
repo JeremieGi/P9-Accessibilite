@@ -38,24 +38,38 @@ class Case2Activity : AppCompatActivity() {
 
         /**
          * TODO : Voir avec Denis => pas réussi (pas sur de comprendre l'attendu)
+         * https://openclassrooms.com/fr/paths/527/projects/1641/exercice---rendre-une-ui-accessible-en-suivant-un-sprint
          * 2 - Il faut trois gestes pour parcourir une carte.
          * Nous pouvons optimiser la navigation grâce aux Accessibility Actions,
          * et faire que la carte soit parcourable en un seul geste.
+         * mais comment faire ?
+         * et comment accéder aux favoris par exemple après ce dev ?
          *
          * https://developer.android.com/reference/androidx/core/view/accessibility/AccessibilityNodeInfoCompat
          */
 
-/*
+        // A regarder : https://www.youtube.com/watch?v=wWDYIGk0Kdo
+
+        // J'ai ajouté une accessibility Action
+        // Pour y accéder :
+        //  - il faut se positionner sur la carte
+        //  - clic rapide avec 3 doigts : affiche le menu talkBack -> choisir Actions
+        //  - on voit apparaître l'action personnalisée
+        //  - le clic sur l'action déclenche le code ci-dessous
+        // => Ca répond pas à la consigne mais c'est une accessibility Action
         ViewCompat.addAccessibilityAction(
             binding.recipeCard,
-            binding.productTitle.text.toString()
+            "Mon action personnnalisée"
         ){ _, _ ->
             Log.d("Accessibilite","test")
+            Toast.makeText(this, getString(R.string.action_realisee), Toast.LENGTH_SHORT)
+                .show()
             true // Retourne true pour indiquer que l'action a été gérée avec succès
         }
-*/
 
-        // Définir un AccessibilityDelegateCompat personnalisé pour votre vue
+
+
+        // Définir un AccessibilityDelegateCompat personnalisé
         ViewCompat.setAccessibilityDelegate(binding.recipeCard, object : AccessibilityDelegateCompat() {
 
             override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
@@ -69,6 +83,7 @@ class Case2Activity : AppCompatActivity() {
                 )
                 info.addAction(customAction)
 
+
             }
 
 
@@ -79,7 +94,6 @@ class Case2Activity : AppCompatActivity() {
                     AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS -> {
                         cardView.requestFocus()
                         Log.d("performAccessibilityAction","ACTION_ACCESSIBILITY_FOCUS")
-                        //return true
                     }
 
                     AccessibilityNodeInfoCompat.ACTION_CLICK -> {

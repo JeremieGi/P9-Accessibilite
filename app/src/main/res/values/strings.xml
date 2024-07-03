@@ -21,5 +21,6 @@
     <string name="clic_recette">Recette cliquée</string>
     <string name="explicationErreur">Le pseudo doit faire au moins 3 caractères</string>
     <string name="pseudo_correct">Pseudo correct</string>
+    <string name="action_realisee">Custom action effectuée</string>
 
 </resources>
